@@ -1,0 +1,20 @@
+# Ignore artifacts:
+dist
+build
+coverage
+
+# Ignore all HTML files:
+**/*.html
+
+# Version control files
+**/.git
+**/.svn
+**/.hg
+
+# Directory dependencies
+**/node_modules
+
+# Editor/IDE directories
+.vscode
+.idea
+.eslintrc.js
