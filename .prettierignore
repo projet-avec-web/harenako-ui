@@ -17,4 +17,4 @@ coverage
 # Editor/IDE directories
 .vscode
 .idea
-.eslintrc.js
+.eslintrc.cjs
