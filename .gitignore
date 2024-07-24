@@ -24,3 +24,13 @@ dist-ssr
 *.sw?
 
 .env
+sonar-project.js
+cypress/plugins
+cypress/screenshots
+coverage
+.nyc_output
+this.babelrc.json
+this.nycr.json
+.sonar
+sonarqube.yml
+
