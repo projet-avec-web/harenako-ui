@@ -824,8 +824,6 @@ export const PossessionApiAxiosParamCreator = function (configuration?: Configur
      */
     crupdatePatrimoinePossessions: async (
       nomPatrimoine: string,
-      page?: number,
-      pageSize?: number,
       getPatrimoinePossessions200Response?: GetPatrimoinePossessions200Response,
       options: RawAxiosRequestConfig = {}
     ): Promise<RequestArgs> => {
@@ -845,14 +843,6 @@ export const PossessionApiAxiosParamCreator = function (configuration?: Configur
       const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
       const localVarHeaderParameter = {} as any;
       const localVarQueryParameter = {} as any;
-
-      if (page !== undefined) {
-        localVarQueryParameter['page'] = page;
-      }
-
-      if (pageSize !== undefined) {
-        localVarQueryParameter['page_size'] = pageSize;
-      }
 
       localVarHeaderParameter['Content-Type'] = 'application/json';
 
@@ -1021,15 +1011,11 @@ export const PossessionApiFp = function (configuration?: Configuration) {
      */
     async crupdatePatrimoinePossessions(
       nomPatrimoine: string,
-      page?: number,
-      pageSize?: number,
       getPatrimoinePossessions200Response?: GetPatrimoinePossessions200Response,
       options?: RawAxiosRequestConfig
     ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPatrimoinePossessions200Response>> {
       const localVarAxiosArgs = await localVarAxiosParamCreator.crupdatePatrimoinePossessions(
         nomPatrimoine,
-        page,
-        pageSize,
         getPatrimoinePossessions200Response,
         options
       );
@@ -1156,13 +1142,11 @@ export const PossessionApiFactory = function (configuration?: Configuration, bas
      */
     crupdatePatrimoinePossessions(
       nomPatrimoine: string,
-      page?: number,
-      pageSize?: number,
       getPatrimoinePossessions200Response?: GetPatrimoinePossessions200Response,
       options?: any
     ): AxiosPromise<GetPatrimoinePossessions200Response> {
       return localVarFp
-        .crupdatePatrimoinePossessions(nomPatrimoine, page, pageSize, getPatrimoinePossessions200Response, options)
+        .crupdatePatrimoinePossessions(nomPatrimoine, getPatrimoinePossessions200Response, options)
         .then((request) => request(axios, basePath));
     },
     /**
@@ -1237,13 +1221,11 @@ export class PossessionApi extends BaseAPI {
    */
   public crupdatePatrimoinePossessions(
     nomPatrimoine: string,
-    page?: number,
-    pageSize?: number,
     getPatrimoinePossessions200Response?: GetPatrimoinePossessions200Response,
     options?: RawAxiosRequestConfig
   ) {
     return PossessionApiFp(this.configuration)
-      .crupdatePatrimoinePossessions(nomPatrimoine, page, pageSize, getPatrimoinePossessions200Response, options)
+      .crupdatePatrimoinePossessions(nomPatrimoine, getPatrimoinePossessions200Response, options)
       .then((request) => request(this.axios, this.basePath));
   }
 
