@@ -20,6 +20,7 @@
     "sonar-local": "npx npx sonar-scanner   -Dsonar.projectKey=sonar-test   -Dsonar.sources=.   -Dsonar.host.url=http://localhost:9000   -Dsonar.token=sqp_20ff490477fcddcb8899871752c95efeafc0ac44"
   },
   "dependencies": {
+    "@harena-com/typescript-client": "^1.0.0",
     "axios": "^1.7.2",
     "dot-env": "^0.0.1",
     "ra-data-json-server": "^5.0.4",

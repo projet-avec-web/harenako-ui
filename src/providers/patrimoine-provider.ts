@@ -1,5 +1,5 @@
-import { patrimoineApi } from '../api/api';
-import { Patrimoine } from '../api/gen-ts';
+import { patrimoineApi } from '../api';
+import { Patrimoine } from '@harena-com/typescript-client';
 import { HarenakoProviderTemplate } from '../types/type';
 import { addIdentifier } from './utils';
 
