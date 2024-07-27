@@ -17,6 +17,15 @@ jobs:
       uses: actions/setup-node@v4.0.3
       with:
         node-version: 22.4.x
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4.0.1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_SECRET_KEY_ID}}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY}}
+        aws-region: ${{ secrets.AWS_REGION }}    
+    - run: aws codeartifact login --tool npm --repository harena-store --domain npm-hei-school --domain-owner 088312068315 --region eu-west-3    
+    
     - name: Cypress run
       uses: cypress-io/github-action@v6.5.0
       with:
