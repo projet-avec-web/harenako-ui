@@ -20,6 +20,7 @@ export const PatrimoineShow = () => {
         <DateField source="t" label={'Date'} />
         <FunctionField
           label={'Valeur comptable'}
+          source="valeur_comptable"
           render={(patrimoine) => renderMoneyWithAriary(patrimoine.valeur_comptable)}
         />
       </SimpleShowLayout>
