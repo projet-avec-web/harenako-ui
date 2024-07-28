@@ -1,4 +1,4 @@
-import { Create, DateInput, SimpleForm, TextInput, NumberInput } from 'react-admin';
+import { Create, DateInput, SimpleForm, TextInput } from 'react-admin';
 
 export const PatrimoineCreate = () => {
   return (
@@ -7,7 +7,6 @@ export const PatrimoineCreate = () => {
         <TextInput source="nom" label="Nom" required />
         <DateInput source="t" label="Date" required />
         <TextInput source="possesseur.nom" label="Possesseur" required />
-        <NumberInput source="valeur_comptable" required />
       </SimpleForm>
     </Create>
   );
