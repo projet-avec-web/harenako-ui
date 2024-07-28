@@ -1,0 +1,12 @@
+{
+  "check-coverage": true,
+  "statements": 80,
+  "branches": 80,
+  "functions": 80,
+  "lines": 80,
+  "report-dir": "coverage",
+  "reporter": ["text", "text-summary", "json", "lcov", "html"],
+  "extension": [".jsx", ".tsx"],
+  "include": ["src/*"],
+  "exclude": ["node_modules/*", "node_modules", "src/api", "src/api/**"]
+}
