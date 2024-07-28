@@ -1,12 +1,15 @@
 import { DataProvider } from 'react-admin';
 import { HarenakoProviderTemplate } from '../types/type';
 import { patrimoineProvider } from './patrimoine-provider';
+import { possessionProvider } from './possession-provider';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getResourceProvider = (resource: string): HarenakoProviderTemplate<any> => {
   switch (resource) {
     case 'patrimoines':
       return patrimoineProvider;
+    case 'possessions':
+      return possessionProvider;
     default:
       throw Error('resource unknown' + resource);
   }
