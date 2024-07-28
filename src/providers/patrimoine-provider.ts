@@ -12,12 +12,12 @@ export const patrimoineProvider: HarenakoProviderTemplate<Patrimoine> = {
   getList: async function (page, pageSize): Promise<Patrimoine[]> {
     return patrimoineApi()
       .getPatrimoines(page, pageSize)
-      .then((res) => res.data!.map((patrimoine) => addIdentifier(patrimoine, 'nom')));
+      .then((res) => res.data.data!.map((patrimoine) => addIdentifier(patrimoine, 'nom')));
   },
   saveOrUpdate: async function (payload): Promise<Patrimoine> {
     return patrimoineApi()
-      .crupdatePatrimoines([payload])
-      .then((res) => addIdentifier(res.data![0], 'nom'));
+      .crupdatePatrimoines({ data: [payload] })
+      .then((res) => addIdentifier(res.data.data![0], 'nom'));
   },
   delete: async function (): Promise<Patrimoine> {
     throw new Error('Function not implemented.');
