@@ -1,31 +1,16 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { Admin, Resource } from 'react-admin';
+import { dataProvider } from './providers/data-provider';
+import { patrimoine_ui } from './operations/patrimoine';
+import { CustomLayout } from './components/layout/layout';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import { possessions_ui } from './operations/possessions';
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
-  );
-}
+const App = () => (
+  <Admin title="patrimoine admin" layout={CustomLayout} dataProvider={dataProvider}>
+    <Resource icon={AccountBalanceIcon} name="patrimoines" {...patrimoine_ui} />
+    <Resource icon={InventoryIcon} name="possessions" {...possessions_ui} />
+  </Admin>
+);
 
 export default App;

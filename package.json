@@ -13,16 +13,28 @@
     "prepare": "husky",
     "cy:open": "cypress open",
     "cy:e2e": "cypress run --spec cypress/e2e/**/*",
-    "cy:component": "cypress run --component"
+    "cy:component": "cypress run --component",
+    "cy:run": "cypress run",
+    "up-sonar-server-linux": "sudo docker compose up -d",
+    "down-sonar-server-linux": "sudo docker compose down",
+    "sonar-local": "npx npx sonar-scanner   -Dsonar.projectKey=sonar-test   -Dsonar.sources=.   -Dsonar.host.url=http://localhost:9000   -Dsonar.token=sqp_20ff490477fcddcb8899871752c95efeafc0ac44"
   },
   "dependencies": {
+    "@harena-com/typescript-client": "^1.0.0",
     "axios": "^1.7.2",
+    "dot-env": "^0.0.1",
+    "ra-data-json-server": "^5.0.4",
     "react": "^18.3.1",
     "react-admin": "^5.0.4",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.12.44",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/cypress": "^1.1.3",
+    "@types/jest": "^29.5.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
@@ -35,9 +47,13 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "husky": "^9.1.1",
     "lint-staged": "^15.2.7",
+    "nyc": "^17.0.0",
     "prettier": "^3.3.3",
+    "sonarqube-scanner": "^4.0.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
-    "vite": "^5.3.4"
+    "vite": "^5.3.4",
+    "vite-plugin-istanbul": "^6.0.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,md}": [
