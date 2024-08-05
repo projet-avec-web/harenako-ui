@@ -11,8 +11,10 @@ frontend:
     build:
       commands:
         - echo "Starting build phase..."
-        - aws configure set aws_access_key_id ${secrets.ACCESS_KEY_ID}
-        - aws configure set aws_secret_access_key ${secrets.SECRET_ACCESS_KEY}
+        - echo "ACCESS_KEY_ID: ${ACCESS_KEY_ID}"
+        - echo "SECRET_ACCESS_KEY: ${SECRET_ACCESS_KEY}"
+        - aws configure set aws_access_key_id $ACCESS_KEY_ID
+        - aws configure set aws_secret_access_key $SECRET_ACCESS_KEY
         - aws configure list
         - aws codeartifact login --tool npm --repository harena-store --domain npm-hei-school --domain-owner 088312068315 --region eu-west-3
         - npm install
